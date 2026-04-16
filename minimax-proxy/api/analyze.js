@@ -63,7 +63,7 @@ export default async function handler(req, res) {
     try {
       result = JSON.parse(resultText);
     } catch {
-      const jsonMatch = resultText.match(/\{[\s\S]*\}/);
+      const jsonMatch = resultText.match(/{[\s\S]*}/);
       if (jsonMatch) {
         result = JSON.parse(jsonMatch[0]);
       } else {
